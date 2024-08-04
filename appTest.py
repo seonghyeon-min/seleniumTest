@@ -18,6 +18,7 @@ def get_driver():
 options = Options()
 options.add_argument("--disable-gpu")
 options.add_argument("--headless")
+options.add_argument('--disable-dev-shm-usage')
 
 driver = get_driver()
 driver.get("http://naver.com")
