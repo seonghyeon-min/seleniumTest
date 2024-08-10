@@ -102,8 +102,11 @@ def get_driver() :
     options.add_argument("--headless")
     options.add_argument('--disable-dev-shm-usage')
 
-    driver = webdriver.Chrome(service=Service(chrome_type=ChromeType.CHROMIUM).install(),
+    driver = webdriver.Chrome(
+        service=Service(
+            ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install(),
                                 options=options)
+    )
 
     # driver.maximize_window()
     # driver.implicitly_wait(5)
