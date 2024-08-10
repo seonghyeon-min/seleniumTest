@@ -101,14 +101,14 @@ def get_driver() :
     options.add_argument("--disable-gpu")
     options.add_argument("--headless")
     options.add_argument('--disable-dev-shm-usage')
-    
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
+
+    driver = webdriver.Chrome(service=Service(chrome_type=ChromeType.CHROMIUM).install(),
                                 options=options)
 
-    driver.maximize_window()
-    driver.implicitly_wait(5)
-    scale_zoomLevel(0.8)
-    time.sleep(1.5)
+    # driver.maximize_window()
+    # driver.implicitly_wait(5)
+    # scale_zoomLevel(0.8)
+    # time.sleep(1.5)
     driver.get("http://naver.com")
 
     st.success('being successful to access page')
