@@ -27,6 +27,7 @@ def set_inital_setting(*argv) :
     server = argv[1]
 
     orderingLog.log.info(f'{{"URL" : "{URL}", "ServerIndex":"{server}", "Platform Code" : "{argv[2]}"}}')
+    st.info(f'{{"URL" : "{URL}", "ServerIndex":"{server}", "Platform Code" : "{argv[2]}"}}')
     get_driver()
     
     try :
@@ -94,10 +95,13 @@ def SendKeyEvent(contribute, path) :
     
 def get_driver() :
     global driver
-    
+    st.info('get_driver session flow')
     options = webdriver.ChromeOptions()
     # options.add_argument('--headless')
-    options.add_argument('--disable-gpu')
+    options.add_argument("--disable-gpu")
+    options.add_argument("--headless")
+    options.add_argument('--disable-dev-shm-usage')
+    
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
                                 options=options)
 
