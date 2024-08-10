@@ -104,8 +104,9 @@ def get_driver() :
 
     driver = webdriver.Chrome(
         service=Service(
-            ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install(),
-                                options=options)
+            ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()
+            ),
+            options=options
     )
 
     # driver.maximize_window()
