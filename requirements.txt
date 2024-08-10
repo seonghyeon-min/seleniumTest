@@ -1,3 +1,6 @@
 streamlit
 seleniumbase
 webdriver-manager
+pandas
+streamlit_quill
+pyperclip

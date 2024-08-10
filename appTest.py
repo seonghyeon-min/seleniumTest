@@ -25,3 +25,4 @@ driver.get("http://naver.com")
 
 st.success('being successful to access page')
 st.code(driver.page_source)
+driver.close()
