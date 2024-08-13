@@ -113,7 +113,7 @@ def get_driver() :
     # driver.implicitly_wait(5)
     # scale_zoomLevel(0.8)
     # time.sleep(1.5)
-    driver.get("http://naver.com")
+    driver.get(URL)
 
     st.success('being successful to access page')
     st.code(driver.page_source)
